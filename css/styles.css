@@ -439,6 +439,7 @@ img {
 .portfolio-item-text {
   position: absolute;
   top: 0;
+  left: 0;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -469,6 +470,11 @@ img {
 }
 
 /*----------------------------- Footer styles------------------------------ */
+
+.footer-container {
+  display: flex;
+  gap: 120px;
+}
 
 .footer-logo .logo-part {
   color: #f4f4fd;
@@ -515,4 +521,216 @@ img {
 .team-icons {
   display: flex;
   gap: 16px;
+}
+
+.footer-subscribe {
+  width: 453px;
+  height: 80px;
+}
+
+.footer-subscribe-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-subscribe-button {
+  border-radius: 4px;
+  padding: 8px 24px;
+  width: 165px;
+  height: 40px;
+  background-color: #4d5ae5;
+  color: #fff;
+  border: none;
+}
+
+/*-----------------------------Modal styles------------------------------ */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 408px;
+  min-height: 584px;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fcfcfc;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open {
+  visibility: visible;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.backdrop:not(.is-open) .modal {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: transparent;
+  background-color: #e7e9fc;
+  stroke: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.icon-modal-close {
+  width: 24px;
+  height: 24px;
+  fill: #8e8f99;
+}
+
+.modal-contact-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+  margin-top: 72px;
+}
+
+.modal-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.icon-input {
+  padding: 3px 0px;
+  width: 18px;
+  height: 24px;
+}
+
+.modal-contact-box {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  padding-left: 38px;
+}
+
+.modal-information {
+  width: 360px;
+  height: 58px;
+  padding: 0 24px;
+  margin-bottom: 8px;
+}
+
+.modal-text-area {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+}
+
+.modal-text-area::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.modal-comment {
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.modal-icon {
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  color: #404bbf;
+  border: none;
+}
+
+.modal-contact-box:hover,
+.modal-contact-box:focus {
+  border: 1px solid #4d5ae5;
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+}
+
+.checkbox-icon {
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  fill: transparent;
+  opacity: 0;
+}
+
+.checkbox-box {
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  width: 16px;
+  height: 16px;
+  display: flex;
+}
+
+.checkbox-icon:hover,
+.checkbox-icon:focus {
+  background-color: #404bbf;
+}
+
+.modal-contact-button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background: #4d5ae5;
+  cursor: pointer;
+  padding: 16px 32px;
+  border-radius: 4px;
+  border: none;
+  width: 169px;
+  height: 56px;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.modal-contact-button:hover,
+.modal-contact-button:focus {
+  background-color: #404bbf;
 }
