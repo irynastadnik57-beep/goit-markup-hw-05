@@ -175,6 +175,7 @@ img {
   padding: 16px 32px;
   border-radius: 4px;
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-header {
@@ -204,6 +205,22 @@ img {
 .button-header:focus {
   color: #fff;
   background: #404bbf;
+}
+
+.icon-link:hover,
+.icon-link:focus {
+  background-color: #31d0aa;
+}
+
+.icon-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*----------------------------- Features styles------------------------------ */
@@ -337,11 +354,15 @@ img {
 
 .team-icons {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   margin-top: 8px;
 }
 
 .icon-team {
+  fill: #f4f4fd;
+}
+
+.team-link {
   display: inline-flex;
   padding: 12px;
   align-items: center;
@@ -355,9 +376,9 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-team {
-  fill: #f4f4fd;
-  background-color: #4d5ae5;
+.team-link:hover,
+.team-link:focus {
+  background-color: #404bbf;
 }
 
 .team-icons-list {
@@ -430,10 +451,17 @@ img {
 .portfolio-item {
   width: calc((100% - 48px) / 3);
   position: relative;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item:hover .portfolio-item-text {
   transform: translateY(0);
+}
+
+.portfolio-item:hover {
+  box-shadow:
+    0 12px 24px rgba(46, 47, 66, 0.12),
+    0 4px 6px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item-text {
@@ -537,6 +565,12 @@ img {
   margin-bottom: 16px;
 }
 
+.footer-subscribe-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
 .footer-subscribe-button {
   border-radius: 4px;
   padding: 8px 24px;
@@ -594,8 +628,8 @@ img {
   position: absolute;
   top: 24px;
   right: 24px;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background-color: transparent;
   background-color: #e7e9fc;
@@ -632,6 +666,7 @@ img {
   padding: 3px 0px;
   width: 18px;
   height: 24px;
+  position: relative;
 }
 
 .modal-contact-box {
@@ -640,6 +675,15 @@ img {
   width: 360px;
   height: 40px;
   padding-left: 38px;
+  position: relative;
+}
+
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: rgba(46, 47, 66, 0.4);
 }
 
 .modal-information {
@@ -682,10 +726,7 @@ img {
 
 .modal-contact-box:hover,
 .modal-contact-box:focus {
-  border: 1px solid #4d5ae5;
-  border-radius: 4px;
-  width: 360px;
-  height: 40px;
+  border-color: #4d5ae5;
 }
 
 .checkbox-icon {
@@ -725,10 +766,13 @@ img {
   margin: auto;
   display: block;
   margin-top: 24px;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-contact-button:hover,
-.modal-contact-button:focus {
+.modal-contact-button:focus-visible {
   background-color: #404bbf;
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
 }
@@ -736,7 +780,7 @@ img {
 .footer-subscribe-input {
   border-radius: 4px;
   padding: 8px 16px;
-  width: 100%;
+  width: 264px;
   height: 40px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
@@ -750,6 +794,25 @@ img {
 .footer-subscribe-button :hover,
 .footer-subscribe-button :focus {
   background: #31d0aa;
+}
+
+.footer-icon-link:hover,
+.footer-icon-link:focus {
+  background-color: #31d0aa;
+}
+
+.footer-icon-link {
+  display: inline-flex;
+  padding: 12px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-subscribe-button {
@@ -781,6 +844,11 @@ img {
   fill: #ffffff;
 }
 
+.modal-checkbox:checked + .checkbox-label .checkbox-box {
+  background-color: #4d5ae5;
+  border-color: #4d5ae5;
+}
+
 .footer-subscribe-text {
   font-weight: 500;
   font-size: 16px;
@@ -789,3 +857,18 @@ img {
   text-align: center;
   color: #fff;
 }
+
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: rgba(46, 47, 66, 0.4);
+}
+
+.modal-icon:hover,
+.modal-icon:focus {
+  fill: #4d5ae5;
+}
+
+border-color: #4d5ae5;
